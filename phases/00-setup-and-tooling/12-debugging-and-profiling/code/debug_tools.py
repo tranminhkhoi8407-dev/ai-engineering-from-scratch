@@ -176,7 +176,7 @@ def demo_nan_detection():
     optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
     optimizer.zero_grad()
-    output = model(x)
+    output = model(x) /torch.zeros(1) 
     loss = criterion(output, target)
     loss.backward()
     print(f"  Normal loss: {loss.item():.4f}")
